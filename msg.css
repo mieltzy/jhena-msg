@@ -1,0 +1,134 @@
+.hidden {
+    display: none;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Place behind the content */
+}
+
+/* Style for the video element */
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+#container {
+    color: transparent;
+    background-color: none;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    -webkit-text-stroke: 1px #fff;
+}
+#first {
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: arial;
+    text-align: center;
+    margin-top: 0px;
+    font-style: italic;
+}
+#second {
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: arial;
+    text-align: center;
+    font-style: italic;
+    margin-top: opx;
+}
+#button {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 20vh;
+}
+#btn {
+    background-color: rgb(10, 173, 10);
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    border: none;
+    border-radius: 18px;
+    padding-top: 8px;
+    padding-left: 19px;
+    padding-bottom: 8px;
+    padding-right: 19px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.15s;
+    text-decoration: none;
+    box-shadow: 5px 5px 10px;
+}
+#btn:hover {
+    background-color: rgb(5, 107, 5);
+}
+#btn:active {
+    opacity: 0.4;
+}
+#btn-no {
+    background-color: red;
+    color: white;
+    padding-left: 22px;
+    padding-right: 19px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.15s;
+    text-decoration: none;
+    box-shadow: 5px 5px 10px;
+}
+#btn-no:hover {
+    background-color: rgb(148, 6, 6);
+}
+#btn-no:active {
+    opacity: 0.5;
+}
+#btn2 {
+    position: fixed; /* Fixes the element in place */
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Adjusts the position to truly center */
+    text-align: center; /* Centers the text inside the div */
+    z-index: 10; /* Ensures the button is on top of other content */
+}
+
+#continueButton {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    padding: 15px 32px; /* Add padding */
+    text-align: center; /* Center the text inside the button */
+    text-decoration: none; /* Remove underline from text */
+    display: inline-block; /* Allow margin and padding to work */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Add some space around the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+#continueButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}

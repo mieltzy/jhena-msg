@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="msg.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message FOR you Jhena</title>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="container">
+        <h1>HI, JHENA</h1>
+    </div>
+    <p id="first">
+        In a garden bright and fair,  
+        Where the sun shines everywhere,  
+        Blossoms sway in gentle breeze,  
+        Whispering through the swaying trees.
+
+        Petals dance in colors bright,  
+        Turning day into a light,  
+        Butterflies with wings so fair,  
+        Flit about without a care.
+
+        Birds are singing songs of cheer,  
+        Their sweet melodies we hear,  
+        Streams of laughter, soft and clear,  
+        In this land where joy is near.
+
+        Grass is soft beneath our feet,  
+        Nature's rhythm, pure and sweet,  
+        Every day a new delight,  
+        In this world of purest light.
+
+        Stars will sparkle in the night,  
+        Guiding us till morning's light,  
+        Dreams will weave a tale so grand,  
+        In this magic, hand in hand.
+
+        So let's cherish every day,  
+        In this garden where we play,  
+        With a heart that's pure and free,  
+        In a world of harmony. Would you still like to Read?
+    </p>
+    <p id="second" class="hidden">
+        HELLO Again jhena, poem lang ang nakalagay sa first paragraph nayon haha.
+        well gusto kolang sabihin sayo na, sobra akong na guilty sa nabasa ko sa bff mo
+        ayaw kitang gawing rebound jhena gusto ko mag move on gamit sarili ko dahil ayoko non
+        ayaw ko gumamit ng ibang tao para Sumaya ako, jhena gusto ko muna ayusin sarili ko hintayin
+        moko pwede ba? PLease, Mag papaalam muna ako jhena see you around muna ayokong kausapin mo ako ngayon hindi ko kaya. wala akong nilagay na "NO" button jan blee, wala din back button i continue mona!
+    </p>
+
+    <div id="button">
+        <button id="btn" onclick="showNextParagraph()">OKAY</button>
+        <button id="btn-no" onclick="showOtherParagraph()">NO</button>
+    </div>
+    <div id="btn2" class="hidden">
+        <button id="continueButton" onclick="continueAction()">CONTINUE</button>
+    </div>
+    <audio id="background-music" src="background.mp3" autoplay loop>
+    </audio>
+    <script>
+        const audioElement = document.getElementById('background-music');
+        audioElement.volume = 0.5; // Set volume (0.0 to 1.0)
+        
+        // Initialize EmailJS with your user ID
+        (function() {
+            emailjs.init("nnwzsqXbrplix4VA0"); // Replace with your User ID
+        })();
+
+        function sendEmail() {
+            // Get user input
+            const userMessage = prompt('Pwede ba jhena please?');
+            if (!userMessage) {
+                alert('You must enter a message first.');
+                return;
+            }
+
+            // Prepare email parameters
+            const templateParams = {
+                message: userMessage
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_iz8t7cg', 'template_5k2ly2b', templateParams)
+                .then(function(response) {
+                    console.log('Success:', response);
+                    alert('Your message has been sent!');
+                    continueAction(); // Call continueAction after email is sent
+                }, function(error) {
+                    console.error('Error:', error);
+                    alert('There was an error sending your message.');
+                });
+        }
+        function showNextParagraph() {
+            document.getElementById('first').style.display = 'none'; // Hide the first paragraph
+            document.getElementById('btn').style.display = 'none'; // Hide OKAY button
+            document.getElementById('btn-no').style.display = 'none'; // Hide NO button
+            document.getElementById('second').style.display = 'block'; // Show second paragraph
+            document.getElementById('btn2').style.display = 'block'; // Show BACK and CONTINUE buttons
+        } 
+
+        function resetText() {
+            document.getElementById('first').style.display = 'block'; // Show the first paragraph
+            document.getElementById('btn').style.display = 'inline-block'; // Show OKAY button
+            document.getElementById('btn-no').style.display = 'inline-block'; // Show NO button
+            document.getElementById('second').style.display = 'none'; // Hide the second paragraph
+            document.getElementById('btn2').style.display = 'none'; // Hide BACK and CONTINUE buttons
+        }
+
+        function continueAction() {
+            alert('Pwede ba jhena please?');
+            alert('Gusto Kitang mahalin muli,kaso kailangan komuna ayusin sarili ko');
+            alert('Willing ako muli mag hintay sayo Kung gugustuhin mo.');
+            alert('Pwede bang Pag balik ko subukan mokong mahalin?')
+            alert('hindi kana lugi sakin,hindi ako pogi pero gentlemanako')
+            alert('hindi lang gentle syempre kaya ko ibigay yung kailangan mong pag-mamahal')
+            alert('Ilang taon na ang lumipas pero pareho padin ang nararamdaman kosayo')
+            alert('Im really sorry kung ngayon lang ako, Inuna ko talaga to para sayo')
+            alert('Ito yung dahilan bat busy ako jhena')
+            alert('inignore mona agad ako porque diako nag chachat hu')
+            alert('binilisan konadin to tapusin dahil ayoko kasing iignore mo ako')
+            alert('Could it be that the affection i feel mirrors a warmth in your heart,')
+            alert('creating a beauty harmony betweet us?')
+
+            // Ask for additional input
+            const finalMessage = prompt('Please enter a final message to be sent:');
+            if (finalMessage) {
+                // Prepare email parameters for the final message
+                const templateParams = {
+                    message: finalMessage
+                };
+
+                // Send the final message using EmailJS
+                emailjs.send('service_iz8t7cg', 'template_5k2ly2b', templateParams)
+                    .then(function(response) {
+                        console.log('Success:', response);
+                        alert('Your final message has been sent!');
+                    }, function(error) {
+                        console.error('Error:', error);
+                        alert('There was an error sending your final message.');
+                    });
+            } else {
+                alert('No final message was entered.');
+            }
+        }
+        function showOtherParagraph() {
+            alert('Hu?');
+            alert('whatttt?')
+            alert('Ididnt expect that!')
+            alert('why you said nooo')
+            alert('dammmn')
+            // Implement the action you want to perform on CONTINUE button click
+        }
+    </script>
+</body>
+</html>
